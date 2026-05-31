@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { supabase } from "@/lib/supabaseClient";
+
 
 type GeneratedCore = {
   problem: string;
@@ -121,13 +123,13 @@ export default function CoreForm() {
     }, 1200);
   }
 
-  function handleSave() {
-    if (!generated) return;
-    const entry = { idea, core: generated, savedAt: new Date().toISOString() };
-    const existing = JSON.parse(localStorage.getItem("talentbridge_saves") ?? "[]");
-    localStorage.setItem("talentbridge_saves", JSON.stringify([entry, ...existing]));
-    setSaved(true);
-  }
+  async function handleSave() {
+  if (!generated) return;
+  const { error } = await supabase
+    .from("Core_Outputs")
+    .insert({ idea: idea, output: JSON.stringify(generated) });
+  if (!error) setSaved(true);
+}
 
   return (
     <div className="space-y-6">
