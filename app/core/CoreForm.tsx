@@ -127,7 +127,7 @@ export default function CoreForm() {
   if (!generated) return;
   const { error } = await supabase
     .from("Core_Outputs")
-    .insert({ idea: idea, output: JSON.stringify(generated) });
+    .insert({ idea: idea, Output: JSON.stringify(generated) });
   if (!error) setSaved(true);
 }
 
