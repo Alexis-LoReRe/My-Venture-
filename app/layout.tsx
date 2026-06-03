@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import NavLinks from "./components/NavLinks";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -37,28 +38,7 @@ export default function RootLayout({
             >
               My Venture
             </Link>
-            <ul className="flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-              <li>
-                <Link href="/" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/core" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-                  Core
-                </Link>
-              </li>
-              <li>
-                <Link href="/docs" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-                  Docs
-                </Link>
-              </li>
-              <li>
-                <Link href="/dashboard" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-                  Dashboard
-                </Link>
-              </li>
-            </ul>
+            <NavLinks />
           </nav>
         </header>
 
