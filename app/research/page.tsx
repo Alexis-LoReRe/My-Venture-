@@ -246,11 +246,11 @@ export default function ResearchPage() {
 
   async function handleSave() {
     setSaving(true);
-    const { error } = await supabase.from("Research_Outputs").insert({
+    const { error } = await supabase.from("research_outputs").insert({
       venture_idea: ventureIdea,
       target_user: targetUser,
-      market_context: marketContext,
-      key_assumption: keyAssumption,
+      market: marketContext,
+      assumption: keyAssumption,
     });
     if (!error) setSaved(true);
     setSaving(false);
