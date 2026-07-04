@@ -10,6 +10,7 @@ const LINKS = [
   { href: "/pricing", label: "Pricing" },
   { href: "/marketing", label: "Marketing" },
   { href: "/docs", label: "Docs" },
+  { href: "/chat", label: "Chat" },
 ];
 
 export default function NavLinks() {
