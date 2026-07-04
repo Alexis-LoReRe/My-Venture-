@@ -366,9 +366,16 @@ export default function MarketingPage() {
     setSaving(true)
     setSaveError(null)
     try {
-      const { error } = await supabase.from('marketing_outputs').insert([
-        { inputs, generated_content: generated, ab_test_winner: abWinner },
-      ])
+      const { error } = await supabase.from('marketing_outputs').insert([{
+        product_name: inputs.productName,
+        inputs,
+        brand: generated.brand,
+        social_posts: generated.socialPosts,
+        video_scripts: generated.videoScripts,
+        calendar: generated.campaignCalendar,
+        visual_prompts: generated.visualPrompts,
+        ab_test: { ...generated.abTest, winner: abWinner },
+      }])
       if (error) throw error
       setSaved(true)
     } catch (err) {
