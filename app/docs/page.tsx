@@ -252,14 +252,14 @@ export default function DocsPage() {
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Key Design Decisions</p>
               <p className="text-sm text-slate-300 leading-relaxed">
-                [Placeholder] Add notes here about choices you made and why — e.g. why you chose a client-side guardrail vs. an API call, or how you structured the chat intake flow.
+                I chose a client-side guardrail check over a live AI API call for /chat because it needed to work reliably and instantly without depending on API billing being resolved. I structured the chat intake as fixed button choices instead of free typing for the first 3 questions because it keeps the data structured and easy to save to Supabase, while still allowing a free-text box for anything unstructured. I reused the same Supabase client across every module instead of creating a new one per page, which also meant a bug fixed in Week 4 stayed fixed for every module after it.
               </p>
             </div>
 
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">What I Would Build Next</p>
               <p className="text-sm text-slate-300 leading-relaxed">
-                [Placeholder] Add your thoughts on what you would add in a Week 7 — real AI API integration, user authentication, a student profile builder, an SME job posting flow, etc.
+                In a Version 2, I'd connect the real Anthropic API now that billing is resolved, so /core, /research, /marketing, and /chat generate live AI output instead of simulated templates. I'd also add a real student authentication and profile system, since right now there's no persistent user account connecting someone's chat session to their actual profile or saved matches. Finally, I'd add response variation to the chat assistant so repeat testers don't see identical wording, based on real user testing feedback.
               </p>
             </div>
           </div>
