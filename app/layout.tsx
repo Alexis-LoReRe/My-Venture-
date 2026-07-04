@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Venture",
-  description: "AI-Powered Web Application",
+  title: "TalentBridge MX",
+  description: "AI-powered talent marketplace connecting Mexican university students with SMEs.",
 };
 
 export default function RootLayout({
@@ -36,7 +36,7 @@ export default function RootLayout({
               href="/"
               className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white"
             >
-              My Venture
+              TalentBridge MX
             </Link>
             <NavLinks />
           </nav>
